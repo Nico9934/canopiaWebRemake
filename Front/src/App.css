@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-negro: #222420;
+  --color-blanco: #F4F4F4;
+  --color-grisClaro: #E9D1BE;
+  --color-violeta: #BE77DD;
+  --color-verdeOliva: #ADC92E;
+  --color-verdeOpaco: #8AA361;
+}
+
+
+
+html, body {
+  font-family: 'Comfortaa', sans-serif;
+}
