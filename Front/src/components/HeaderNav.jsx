@@ -6,7 +6,7 @@ const HeaderNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="absolute top-0 left-0 w-full p-4 flex justify-between items-center bg-verdeOpaco z-20">
+        <nav className="left-0 w-full p-4 flex justify-between items-center bg-verdeOpaco z-20">
             <Link to="/" className="text-white text-2xl font-bold">Canopia</Link>
 
             <div className="md:hidden">
