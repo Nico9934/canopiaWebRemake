@@ -19,18 +19,18 @@ const About = () => {
                     </div>
 
                     {/* Galería o Slider en móviles */}
-                    {mobile ? (
+                    {/* {mobile ? (
                         <CarouselDefault />
-                    ) : (
-                        <div className="grid grid-cols-3 gap-4">
-                            <img src="/IMG-20250327-WA0013.jpg" className="" alt="Paisaje 1" />
-                            <img src="/IMG-20250327-WA0014.jpg" className="" alt="Paisaje 2" />
-                            <img src="/IMG-20250327-WA0015.jpg" className="" alt="Paisaje 3" />
-                            <img src="/IMG-20250327-WA0016.jpg" className="" alt="Paisaje 4" />
-                            <img src="/IMG-20250327-WA0017.jpg" className="" alt="Paisaje 5" />
-                            <img src="/IMG-20250327-WA0018.jpg" className="" alt="Paisaje 6" />
-                        </div>
-                    )}
+                    ) : ( */}
+                    <div className="grid grid-cols-3 gap-4">
+                        <img src="/IMG-20250327-WA0013.jpg" className="" alt="Paisaje 1" />
+                        <img src="/IMG-20250327-WA0014.jpg" className="" alt="Paisaje 2" />
+                        <img src="/IMG-20250327-WA0015.jpg" className="" alt="Paisaje 3" />
+                        <img src="/IMG-20250327-WA0016.jpg" className="" alt="Paisaje 4" />
+                        <img src="/IMG-20250327-WA0017.jpg" className="" alt="Paisaje 5" />
+                        <img src="/IMG-20250327-WA0018.jpg" className="" alt="Paisaje 6" />
+                    </div>
+                    {/* )} */}
                 </div>
             </div>
         </div>

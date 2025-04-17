@@ -7,11 +7,11 @@ import { BrowserRouter } from 'react-router-dom'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ThemeProvider theme={{}}>
+  // <ThemeProvider theme={{}}>
 
-    <BrowserRouter>
+  <BrowserRouter>
 
-      <App />
-    </BrowserRouter>
-  </ThemeProvider>
+    <App />
+  </BrowserRouter>
+  // {/* </ThemeProvider> */ }
 )
