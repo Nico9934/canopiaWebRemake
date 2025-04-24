@@ -2,15 +2,15 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <section id="contacto" className="bg-gray-100 text-black py-16 px-6">
-            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 mb-8 md:mb-0">
+        <section id="contacto" className="bg-gray-100 text-black py-16 px-6 flex md:justify-between flex-col md:flex-row items-center">
+            <div className="md:w-1/2 mx-auto flex flex-col md:flex-row items-center">
+                <div className="mb-8 md:mb-0">
                     <h2 className="text-4xl font-bold mb-6 text-violeta">Contacto</h2>
                     <p className="text-lg"></p>
                     Si tienes alguna consulta o necesitas más información, no dudes en enviarnos un mensaje. Estamos aquí para ayudarte.
                 </div>
             </div>
-            <div className="md:w-1/2">
+            <div className="w-full md:w-1/2">
                 <form className="grid gap-6">
                     <input
                         type="text"
