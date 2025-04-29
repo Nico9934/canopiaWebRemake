@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <section id="contacto" className="bg-gray-100 text-black py-16 px-6 flex md:justify-between flex-col md:flex-row items-center">
+        <section id="contacto" className="bg-gray-100 text-black py-16 px-6 flex md:justify-between flex-col md:flex-row items-center md:gap-24">
             <div className="md:w-1/2 mx-auto flex flex-col md:flex-row items-center">
                 <div className="mb-8 md:mb-0">
                     <h2 className="text-4xl font-bold mb-6 text-violeta">Contacto</h2>

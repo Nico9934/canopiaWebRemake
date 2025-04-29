@@ -25,7 +25,7 @@ const HeaderNav = () => {
 
             {/* Menú móvil */}
             {menuOpen && (
-                <div className="absolute top-16 left-0 w-full bg-black bg-opacity-80 text-white text-center py-6 md:hidden">
+                <div className="absolute top-16 left-0 w-full bg-verdeOpaco bg-opacity-80 text-white text-center py-6 md:hidden z-40">
                     <ul className="space-y-4">
                         <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
                         <li><Link to="/about" onClick={() => setMenuOpen(false)}>Nosotros</Link></li>

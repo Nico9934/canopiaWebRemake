@@ -6,7 +6,8 @@ import Services from './pages/Services'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Footer from './pages/Footer'
-
+import BackAfter from './pages/BackAfter'
+import Coments from './pages/Coments'
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
       <PrincipalHero></PrincipalHero>
       <About></About>
       <Services></Services>
+      <BackAfter></BackAfter>
+      <Coments></Coments>
+
       <Gallery></Gallery>
       <Contact></Contact>
       <Footer></Footer>
