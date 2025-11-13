@@ -1,9 +1,9 @@
 const Gallery = () => {
     const projects = [
-        { title: "Casa", subtitle: "ZEN", imageUrl: "/IMG-20250327-WA0013.jpg" },
-        { title: "CASA", subtitle: "MIRADOR", imageUrl: "/IMG-20250327-WA0017.jpg" },
-        { title: "CASA", subtitle: "DORREGO", imageUrl: "/IMG-20250327-WA0017.jpg" },
-        { title: "OFICINAS", subtitle: "DYNAMIC", imageUrl: "/IMG-20250327-WA0017.jpg" },
+        { title: "Casa", subtitle: "ZEN", imageUrl: "/Proyecto 1/imagen-1.jpeg" },
+        { title: "CASA", subtitle: "MIRADOR", imageUrl: "/Proyecto 2/imagen-1.jpg" },
+        { title: "CASA", subtitle: "DORREGO", imageUrl: "/Proyecto 3/imagen-1.jpeg" },
+        { title: "OFICINAS", subtitle: "DYNAMIC", imageUrl: "/Proyecto 4/imagen-1.jpeg" },
     ];
 
     return (

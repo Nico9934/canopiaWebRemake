@@ -1,8 +1,7 @@
 const BackAfter = () => {
-    // Array de proyectos antes y después
     const images = [
-        { before: "/IMG-20250327-WA0013.jpg", after: "/IMG-20250327-WA0017.jpg" },
-        { before: "/IMG-20250327-WA0015.jpg", after: "/IMG-20250327-WA0017.jpg" },
+        { before: "/Antes y despues 1/imagen-1.png", after: "/Antes y despues 1/imagen-2.png" },
+        { before: "/Antes y despues 2/imagen-1.jpeg", after: "/Antes y despues 2/imagen-2.jpeg" },
         { before: "/IMG-20250327-WA0017.jpg", after: "/IMG-20250327-WA0013.jpg" },
     ];
 
@@ -12,14 +11,17 @@ const BackAfter = () => {
                 <h2 className="text-4xl font-bold mb-12 text-negro">Antes y Después</h2>
 
                 {/* Galería */}
-                <div className="grid grid-cols-3 md:grid-cols-1 md:gap-1">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {images.map((img, index) => (
-                        <div key={index} className="relative w-full h-80 overflow-hidden shadow-lg group cursor-pointer">
+                        <div
+                            key={index}
+                            className="relative w-full h-[600px] overflow-hidden shadow-2xl rounded-lg group cursor-pointer"
+                        >
                             {/* Imagen Antes */}
                             <img
                                 src={img.before}
                                 alt="Antes"
-                                className="w-full h-full object-cover transition-opacity duration-400 ease-in-out group-hover:opacity-0"
+                                className="w-full h-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                             />
 
                             {/* Imagen Después */}

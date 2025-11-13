@@ -4,8 +4,18 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const HeaderNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    <style>
+        {`
+                    .menu-transition {
+                        transition: max-height 0.3s ease-in-out;
+                        overflow: hidden;
+                    }
+                `}
+    </style>
     return (
+
+
+
         <nav className="left-0 w-full p-4 flex justify-between items-center bg-verdeOpaco z-20">
             <Link to="/" className="text-white text-2xl font-bold">Canopia</Link>
 

@@ -3,7 +3,7 @@ const PrincipalHero = () => {
         <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center text-white bg-center">
 
             {/* Imagen de fondo para mobile */}
-            <div className="absolute md:hidden inset-0 z-40">
+            <div className="absolute md:hidden inset-0 z-20">
                 <img
                     src="/IMG-20250327-WA0015.jpg"
                     alt="Imagen Canopia"

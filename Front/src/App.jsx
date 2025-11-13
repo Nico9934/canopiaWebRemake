@@ -8,6 +8,8 @@ import Contact from './pages/Contact'
 import Footer from './pages/Footer'
 import BackAfter from './pages/BackAfter'
 import Coments from './pages/Coments'
+import UserForm from './pages/UserForm'
+import VideoHero from './pages/VideoHero'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
 
       <HeaderNav />
       <PrincipalHero></PrincipalHero>
+      <VideoHero></VideoHero>
+
       <About></About>
       <Services></Services>
       <BackAfter></BackAfter>
@@ -23,6 +27,7 @@ function App() {
 
       <Gallery></Gallery>
       <Contact></Contact>
+      <UserForm></UserForm>
       <Footer></Footer>
 
 
