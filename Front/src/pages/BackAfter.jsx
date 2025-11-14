@@ -15,21 +15,29 @@ const BackAfter = () => {
                     {images.map((img, index) => (
                         <div
                             key={index}
-                            className="relative w-full h-[600px] overflow-hidden shadow-2xl rounded-lg group cursor-pointer"
+                            className="relative w-full h-[600px] overflow-hidden shadow-2xl rounded-lg group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-3xl"
                         >
                             {/* Imagen Antes */}
                             <img
                                 src={img.before}
                                 alt="Antes"
-                                className="w-full h-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-0"
+                                className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:opacity-0 group-hover:scale-110"
                             />
 
                             {/* Imagen Después */}
                             <img
                                 src={img.after}
                                 alt="Después"
-                                className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100"
+                                className="absolute inset-0 w-full h-full object-cover opacity-0 scale-95 transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:scale-100"
                             />
+
+                            {/* Etiquetas que aparecen */}
+                            <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                                Antes
+                            </div>
+                            <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                Después
+                            </div>
                         </div>
                     ))}
                 </div>

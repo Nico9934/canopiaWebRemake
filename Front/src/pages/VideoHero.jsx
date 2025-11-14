@@ -5,41 +5,60 @@ const VideoHero = () => {
 
     useEffect(() => {
         if (videoRef.current) {
-            videoRef.current.playbackRate = 0.6; // Velocidad más lenta
+            videoRef.current.playbackRate = 0.6;
         }
     }, []);
 
     return (
-        <section className="w-full h-screen flex flex-col md:flex-row overflow-hidden">
-            {/* Columna izquierda: texto */}
-            <div className="w-full md:w-1/2 h-1/2 md:h-full bg-blanco flex items-center justify-center px-8 md:px-20 z-10">
-                <div className="max-w-2xl text-verdeOpaco text-center md:text-left">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">Quiénes Somos</h2>
-                    <p className="text-lg md:text-xl leading-relaxed">
+        <section className="relative w-full h-screen overflow-hidden">
+            {/* Video de fondo a pantalla completa */}
+            <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+            >
+                <source src="/Videos/video-1.mp4" type="video/mp4" />
+                Tu navegador no soporta el video.
+            </video>
+
+            {/* Overlay oscuro para mejorar legibilidad */}
+            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
+
+            {/* Contenido centrado sobre el video */}
+            <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
+                <div className="max-w-4xl text-center text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+                        Quiénes Somos
+                    </h2>
+                    <div className="w-24 h-1 bg-verdeOliva mx-auto mb-8"></div>
+                    <p className="text-lg md:text-2xl leading-relaxed mb-8 animate-fade-in-delay">
                         Somos una empresa comprometida con la excelencia y la innovación.
                         Nuestro equipo está conformado por profesionales apasionados que trabajan
                         cada día para ofrecer soluciones eficientes, sostenibles y adaptadas
-                        a las necesidades de nuestros clientes. Creemos en el valor del compromiso,
-                        la integridad y la mejora continua.
+                        a las necesidades de nuestros clientes.
+                    </p>
+                    <p className="text-base md:text-xl text-gray-200 animate-fade-in-delay-2">
+                        Creemos en el valor del compromiso, la integridad y la mejora continua.
                     </p>
                 </div>
             </div>
 
-            {/* Columna derecha: video */}
-            <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
+            {/* Indicador de scroll */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+                <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                 >
-                    <source src="/Videos/video-1.mp4" type="video/mp4" />
-                    Tu navegador no soporta el video.
-                </video>
-                {/* Filtro sutil sobre el video en mobile */}
-                <div className="md:hidden absolute inset-0 bg-emerald-900/30" />
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
             </div>
         </section>
     );

@@ -17,12 +17,19 @@ const PrincipalHero = () => {
 
                 {/* Texto */}
                 <div className="flex flex-col justify-center items-start md:-mr-44 m-auto w-full p-6 md:w-2/5 z-20">
-                    <h1 className="text-5xl text-blanco md:text-verdeOpaco text-start md:text-7xl font-bold mb-4">Bienvenido a Canopia</h1>
-                    <p className="text-lg text-blanco md:text-verdeOpaco md:text-xl text-start max-w-2xl mb-6">
+                    <h1 className="text-5xl text-blanco md:text-verdeOpaco text-start md:text-7xl font-bold mb-4 animate-fade-in">
+                        Bienvenido a Canopia
+                    </h1>
+                    <p className="text-lg text-blanco md:text-verdeOpaco md:text-xl text-start max-w-2xl mb-6 animate-fade-in-delay">
                         Transformamos espacios en armonía con la naturaleza, creando jardines sostenibles y elegantes.
                     </p>
-                    <a href="#contacto" className="bg-verdeOpaco hover:bg-grisClaro text-white py-3 px-6 rounded-lg text-lg transition duration-300">
-                        Contactanos
+                    <a
+                        href="#contacto"
+                        className="bg-verdeOpaco hover:bg-grisClaro text-white py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl transform inline-block group"
+                    >
+                        <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">
+                            Contactanos
+                        </span>
                     </a>
                 </div>
 

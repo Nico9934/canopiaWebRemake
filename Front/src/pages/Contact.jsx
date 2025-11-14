@@ -15,23 +15,25 @@ const Contact = () => {
                     <input
                         type="text"
                         placeholder="Nombre"
-                        className="p-3 rounded border border-gray-300 bg-white text-black"
+                        className="p-3 rounded-lg border-2 border-gray-300 bg-white text-black transition-all duration-300 focus:border-violeta focus:ring-4 focus:ring-violeta/20 focus:outline-none hover:border-gray-400"
                     />
                     <input
                         type="email"
                         placeholder="Correo electrónico"
-                        className="p-3 rounded border border-gray-300 bg-white text-black"
+                        className="p-3 rounded-lg border-2 border-gray-300 bg-white text-black transition-all duration-300 focus:border-violeta focus:ring-4 focus:ring-violeta/20 focus:outline-none hover:border-gray-400"
                     />
                     <textarea
                         rows="5"
                         placeholder="Mensaje"
-                        className="p-3 rounded border border-gray-300 bg-white text-black"
+                        className="p-3 rounded-lg border-2 border-gray-300 bg-white text-black transition-all duration-300 focus:border-violeta focus:ring-4 focus:ring-violeta/20 focus:outline-none hover:border-gray-400 resize-none"
                     />
                     <button
                         type="submit"
-                        className="bg-violeta text-white py-3 px-6 rounded hover:bg-purple-600 transition"
+                        className="bg-violeta text-white py-3 px-6 rounded-lg hover:bg-purple-600 transition-all duration-300 hover:scale-105 hover:shadow-xl transform group"
                     >
-                        Enviar Mensaje
+                        <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">
+                            Enviar Mensaje
+                        </span>
                     </button>
                 </form>
             </div>

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import Icono1 from '/src/Clientes-svg/icono-1.svg?react';
 import Icono2 from '/src/Clientes-svg/icono-2.svg?react';
 import Icono3 from '/src/Clientes-svg/icono-3.svg?react';
@@ -8,6 +9,8 @@ import Icono6 from '/src/Clientes-svg/icono-6.svg?react';
 
 
 const Coments = () => {
+    const scrollRef = useRef(null);
+
     const testimonials = [
         {
             name: "María González",
@@ -26,6 +29,8 @@ const Coments = () => {
         },
     ];
 
+    // Duplicar testimonios para el efecto infinito
+    const infiniteTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
     const companies = [
         { name: "YPF", icon: Icono1 },
@@ -36,60 +41,110 @@ const Coments = () => {
         { name: "YPF", icon: Icono6 },
     ];
 
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
+
+        let scrollPosition = 0;
+        const scrollSpeed = 0.5;
+
+        const scroll = () => {
+            scrollPosition += scrollSpeed;
+
+            // Reset cuando llegue al final del primer set
+            if (scrollPosition >= scrollContainer.scrollWidth / 3) {
+                scrollPosition = 0;
+            }
+
+            scrollContainer.scrollLeft = scrollPosition;
+            requestAnimationFrame(scroll);
+        };
+
+        const animationId = requestAnimationFrame(scroll);
+
+        // Pausar en hover
+        const handleMouseEnter = () => cancelAnimationFrame(animationId);
+        const handleMouseLeave = () => requestAnimationFrame(scroll);
+
+        scrollContainer.addEventListener('mouseenter', handleMouseEnter);
+        scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            cancelAnimationFrame(animationId);
+            scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
+            scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, []);
+
     return (
-        <section className="bg-gray-100 py-16 px-6">
-            <div className="max-w-6xl mx-auto text-center">
+        <section className="bg-gray-50 py-20 px-6 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
                 {/* Testimonios */}
-                <h2 className="text-4xl font-bold mb-12 text-verdeOpaco">Lo que dicen nuestros clientes</h2>
-                <div className="grid gap-8 md:grid-cols-3">
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
-                            <img
-                                src={testimonial.image}
-                                alt={testimonial.name}
-                                className="w-24 h-24 rounded-full object-cover mb-4"
-                            />
-                            <h3 className="text-xl font-semibold mb-2">{testimonial.name}</h3>
-                            <div className="flex justify-center mb-2">
-                                {[...Array(5)].map((_, starIndex) => (
-                                    <svg
+                <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-verdeOpaco">
+                    Lo que dicen nuestros clientes
+                </h2>
 
-                                        key={starIndex}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        fill="#000000"
-
-                                        className="w-5 h-5 text-verdeOpaco mx-0.5"
-                                    >
-                                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                ))}
-                            </div>
-                            <p className="text-gray-600 text-sm">{testimonial.comment}</p>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-20">
-                    <div className="overflow-hidden relative">
-                        <div className="flex gap-8 items-center justify-center flex-wrap">
-                            <div className="mt-20">
-                                <h3 className="text-2xl font-bold mb-8 text-verdeOpaco">Empresas que confiaron en nosotros</h3>
-                                <div className="overflow-hidden relative">
-                                    <div className="flex gap-8 items-center justify-center flex-wrap">
-                                        {companies.map((company, index) => (
-                                            <div key={index} className="w-24 h-24 flex items-center justify-center">
-                                                <company.icon className="w-full h-full fill-gray-300" />
-                                            </div>
+                {/* Carrusel infinito */}
+                <div
+                    ref={scrollRef}
+                    className="flex gap-8 overflow-x-hidden pb-4"
+                    style={{ scrollBehavior: 'auto' }}
+                >
+                    {infiniteTestimonials.map((testimonial, index) => (
+                        <div
+                            key={index}
+                            className="shrink-0 w-80 md:w-96 bg-white/60 backdrop-blur-sm p-8 border-l-4 border-verdeOpaco hover:border-violeta transition-all duration-500 hover:shadow-xl group"
+                        >
+                            <div className="flex items-start gap-4 mb-4">
+                                <img
+                                    src={testimonial.image}
+                                    alt={testimonial.name}
+                                    className="w-16 h-16 rounded-full object-cover ring-2 ring-gray-200 group-hover:ring-verdeOpaco transition-all duration-300"
+                                />
+                                <div className="flex-1">
+                                    <h3 className="text-lg font-semibold text-gray-800 mb-1">
+                                        {testimonial.name}
+                                    </h3>
+                                    <div className="flex gap-1">
+                                        {[...Array(5)].map((_, starIndex) => (
+                                            <svg
+                                                key={starIndex}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                className="w-4 h-4 text-verdeOpaco"
+                                            >
+                                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                            </svg>
                                         ))}
                                     </div>
                                 </div>
                             </div>
+                            <p className="text-gray-600 text-sm leading-relaxed italic">
+                                "{testimonial.comment}"
+                            </p>
                         </div>
-                    </div>
+                    ))}
                 </div>
 
+                {/* Empresas */}
+                <div className="mt-24">
+                    <h3 className="text-2xl font-bold mb-12 text-center text-verdeOpaco">
+                        Empresas que confiaron en nosotros
+                    </h3>
+                    <div className="flex gap-12 items-center justify-center flex-wrap">
+                        {companies.map((company, index) => (
+                            <div
+                                key={index}
+                                className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center transform transition-all duration-500 hover:scale-125 cursor-pointer group grayscale hover:grayscale-0"
+                            >
+                                <company.icon className="w-full h-full fill-gray-300 transition-all duration-500 group-hover:fill-verdeOpaco" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-        </section >
+        </section>
     );
 };
 

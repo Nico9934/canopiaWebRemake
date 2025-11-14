@@ -30,8 +30,8 @@ const UserForm = () => {
                     action=""
                     className="w-full sm:w-1/2 justify-center items-center gap-10 flex flex-col flex-wrap"
                 >
-                    <div className="w-full flex flex-col ">
-                        <label htmlFor="name" className="text-sm">
+                    <div className="w-full flex flex-col group">
+                        <label htmlFor="name" className="text-sm mb-1 transition-colors duration-300 group-focus-within:text-violeta">
                             Nombre: *
                         </label>
                         <input
@@ -39,22 +39,22 @@ const UserForm = () => {
                             id="name"
                             value={user.name}
                             onChange={(e) => setUser({ ...user, name: e.target.value })}
-                            className="text-sm text-verdeOscuro border-b border-verdeOscuro"
+                            className="text-sm text-verdeOscuro border-b-2 border-verdeOscuro py-2 transition-all duration-300 focus:border-violeta focus:outline-none bg-transparent"
                         />
                     </div>
-                    <div className="w-full flex flex-col ">
-                        <label htmlFor="city" className="text-sm">
+                    <div className="w-full flex flex-col group">
+                        <label htmlFor="city" className="text-sm mb-1 transition-colors duration-300 group-focus-within:text-violeta">
                             Ciudad: *
                         </label>
                         <input
                             type="text"
                             id="city"
                             onChange={(e) => setUser({ ...user, city: e.target.value })}
-                            className="text-sm text-verdeOscuro border-b border-verdeOscuro"
+                            className="text-sm text-verdeOscuro border-b-2 border-verdeOscuro py-2 transition-all duration-300 focus:border-violeta focus:outline-none bg-transparent"
                         />
                     </div>
-                    <div className="w-full flex flex-col ">
-                        <label htmlFor="email" className="text-sm">
+                    <div className="w-full flex flex-col group">
+                        <label htmlFor="email" className="text-sm mb-1 transition-colors duration-300 group-focus-within:text-violeta">
                             Email: *
                         </label>
                         <input
@@ -62,11 +62,11 @@ const UserForm = () => {
                             id="email"
                             value={user.email}
                             onChange={(e) => setUser({ ...user, email: e.target.value })}
-                            className="text-sm text-verdeOscuro border-b border-verdeOscuro"
+                            className="text-sm text-verdeOscuro border-b-2 border-verdeOscuro py-2 transition-all duration-300 focus:border-violeta focus:outline-none bg-transparent"
                         />
                     </div>
-                    <div className="w-full flex flex-col ">
-                        <label htmlFor="phone" className="text-sm">
+                    <div className="w-full flex flex-col group">
+                        <label htmlFor="phone" className="text-sm mb-1 transition-colors duration-300 group-focus-within:text-violeta">
                             Telefono: *
                         </label>
                         <input
@@ -74,11 +74,11 @@ const UserForm = () => {
                             id="phone"
                             value={user.phone}
                             onChange={(e) => setUser({ ...user, phone: e.target.value })}
-                            className="text-sm text-verdeOscuro border-b border-verdeOscuro"
+                            className="text-sm text-verdeOscuro border-b-2 border-verdeOscuro py-2 transition-all duration-300 focus:border-violeta focus:outline-none bg-transparent"
                         />
                     </div>
                     <button
-                        className="w-full m-auto bg-verdeOscuro p-2"
+                        className="w-full m-auto bg-verdeOscuro p-3 rounded-lg text-white transition-all duration-300 hover:bg-violeta hover:scale-105 hover:shadow-xl transform"
                         type="submit"
                         onClick={onHandleSubmit}
                     >
