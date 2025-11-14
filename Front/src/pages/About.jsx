@@ -5,8 +5,8 @@ const About = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
     return (
-        <div className="bg-verdeOpaco py-16 px-4">
-            <div className="max-w-7xl mx-auto">
+        <div id="about" className="bg-verdeOpaco min-h-screen py-16 px-4 flex items-center">
+            <div className="max-w-7xl mx-auto w-full">
                 <div className="flex gap-8 md:gap-24 items-center flex-col md:flex-row">
                     {/* Texto descriptivo */}
                     <div className="text-white w-full md:w-2/5 text-center md:text-left">

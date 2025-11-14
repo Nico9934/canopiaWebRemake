@@ -25,29 +25,29 @@ const HeaderNav = () => {
 
             <ul className="md:flex space-x-6 hidden">
                 <li>
-                    <Link to="/" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
+                    <a href="#inicio" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
                         Inicio
-                    </Link>
+                    </a>
                 </li>
                 <li>
-                    <Link to="/about" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
+                    <a href="#about" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
                         Nosotros
-                    </Link>
+                    </a>
                 </li>
                 <li>
-                    <Link to="/services" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
+                    <a href="#services" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
                         Servicios
-                    </Link>
+                    </a>
                 </li>
                 <li>
-                    <Link to="/gallery" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
+                    <a href="#gallery" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
                         Galería
-                    </Link>
+                    </a>
                 </li>
                 <li>
-                    <Link to="/contact" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
+                    <a href="#contacto" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
                         Contacto
-                    </Link>
+                    </a>
                 </li>
             </ul>
 
@@ -58,29 +58,29 @@ const HeaderNav = () => {
             >
                 <ul className="space-y-4">
                     <li className="transform transition-all duration-300 hover:translate-x-2">
-                        <Link to="/" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
+                        <a href="#inicio" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
                             Inicio
-                        </Link>
+                        </a>
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
-                        <Link to="/about" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
+                        <a href="#about" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
                             Nosotros
-                        </Link>
+                        </a>
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
-                        <Link to="/services" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
+                        <a href="#services" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
                             Servicios
-                        </Link>
+                        </a>
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
-                        <Link to="/gallery" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
+                        <a href="#gallery" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
                             Galería
-                        </Link>
+                        </a>
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
-                        <Link to="/contact" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
+                        <a href="#contacto" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
                             Contacto
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>

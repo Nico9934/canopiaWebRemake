@@ -77,8 +77,8 @@ const Coments = () => {
     }, []);
 
     return (
-        <section className="bg-gray-50 py-20 px-6 overflow-hidden">
-            <div className="max-w-7xl mx-auto">
+        <section className="bg-gray-50 min-h-screen py-20 px-6 overflow-hidden flex items-center">
+            <div className="max-w-7xl mx-auto w-full">
                 {/* Testimonios */}
                 <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-verdeOpaco">
                     Lo que dicen nuestros clientes

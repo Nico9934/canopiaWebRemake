@@ -77,7 +77,7 @@ const Services = () => {
     }, []);
 
     return (
-        <section id="services" className="bg-color-blanco py-16 px-6 text-negro">
+        <section id="services" className="bg-color-blanco min-h-screen py-16 px-6 text-negro flex items-center">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-4xl font-bold text-verdeOpaco mb-10 uppercase">
                     Nuestros Servicios
@@ -89,8 +89,8 @@ const Services = () => {
                             data-service-card
                             data-index={index}
                             className={`p-6 rounded-lg transform transition-all duration-700 hover:scale-105 hover:shadow-2xl bg-white hover:bg-linear-to-br hover:from-verdeOpaco/5 hover:to-violeta/5 cursor-pointer group ${visibleCards.includes(index)
-                                    ? 'opacity-100 translate-y-0'
-                                    : 'opacity-0 translate-y-10'
+                                ? 'opacity-100 translate-y-0'
+                                : 'opacity-0 translate-y-10'
                                 }`}
                             style={{ transitionDelay: `${index * 100}ms` }}
                         >

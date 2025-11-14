@@ -9,6 +9,10 @@
   --color-verdeOpaco: #8AA361;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: 'Comfortaa', sans-serif;

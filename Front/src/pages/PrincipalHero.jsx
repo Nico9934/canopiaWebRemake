@@ -1,6 +1,6 @@
 const PrincipalHero = () => {
     return (
-        <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center text-white bg-center">
+        <div id="inicio" className="relative w-full h-screen flex flex-col justify-center items-center text-center text-white bg-center">
 
             {/* Imagen de fondo para mobile */}
             <div className="absolute md:hidden inset-0 z-20">
