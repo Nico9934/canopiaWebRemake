@@ -36,6 +36,37 @@ const Gallery = () => {
                 "/Proyecto 4/imagen-2.jpeg"
             ]
         },
+        {
+            title: "Casa",
+            subtitle: "ZEN",
+            imageUrl: "/Proyecto 1/imagen-1.jpeg",
+            images: [
+                "/Proyecto 1/imagen-1.jpeg",
+                "/Proyecto 1/imagen-2.jpeg",
+                "/Proyecto 1/imagen-3.jpeg"
+            ]
+        },
+        {
+            title: "CASA",
+            subtitle: "MIRADOR",
+            imageUrl: "/Proyecto 2/imagen-1.jpg",
+            images: ["/Proyecto 2/imagen-1.jpg"]
+        },
+        {
+            title: "CASA",
+            subtitle: "DORREGO",
+            imageUrl: "/Proyecto 3/imagen-1.jpeg",
+            images: ["/Proyecto 3/imagen-1.jpeg"]
+        },
+        {
+            title: "OFICINAS",
+            subtitle: "DYNAMIC",
+            imageUrl: "/Proyecto 4/imagen-1.jpeg",
+            images: [
+                "/Proyecto 4/imagen-1.jpeg",
+                "/Proyecto 4/imagen-2.jpeg"
+            ]
+        },
     ];
 
     const openModal = (project) => {
@@ -65,15 +96,17 @@ const Gallery = () => {
     };
 
     return (
-        <section id="gallery" className="bg-blanco min-h-screen py-16 px-6 flex items-center">
-            <div className="max-w-6xl mx-auto text-white w-full">
-                <h2 className="text-4xl font-bold mb-10 text-center text-negro">Nuestros proyectos</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section id="gallery" className="bg-blanco min-h-screen py-16 px-0 flex items-center">
+            <div className="w-full">
+                <h2 className="text-4xl font-bold mb-10 text-center text-negro px-6">Nuestros proyectos</h2>
+
+                {/* Grid masonry style - imágenes a pantalla completa */}
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1">
                     {projects.map((project, index) => (
                         <div
                             key={index}
                             onClick={() => openModal(project)}
-                            className="relative h-96 overflow-hidden shadow-lg rounded-lg group cursor-pointer"
+                            className="relative aspect-square overflow-hidden group cursor-pointer"
                         >
                             {/* Imagen de fondo */}
                             <img
@@ -82,22 +115,24 @@ const Gallery = () => {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
 
-                            {/* Overlay que aparece en hover */}
-                            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                            {/* Overlay con color que aparece en hover */}
+                            <div className="absolute inset-0 bg-verdeOpaco/0 group-hover:bg-verdeOpaco/85 transition-all duration-500" />
 
-                            {/* Título y subtítulo */}
-                            <div className="absolute top-0 left-0 p-6 z-10 text-white transform transition-all duration-500 group-hover:translate-y-2">
-                                <h3 className="text-lg font-light transition-all duration-300 group-hover:text-grisClaro">
-                                    {project.title}
-                                </h3>
-                                <h2 className="text-3xl font-bold transition-all duration-300 group-hover:text-verdeOliva">
-                                    {project.subtitle}
-                                </h2>
+                            {/* Icono + centrado que aparece en hover */}
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-500">
+                                    <span className="text-white text-4xl font-light">+</span>
+                                </div>
                             </div>
 
-                            {/* Badge "Ver más" que aparece en hover */}
-                            <div className="absolute bottom-4 right-4 bg-verdeOpaco text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                Ver más
+                            {/* Título y subtítulo que aparecen en hover */}
+                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                                <h3 className="text-xs font-light uppercase tracking-wide">
+                                    {project.title}
+                                </h3>
+                                <h2 className="text-lg font-bold">
+                                    {project.subtitle}
+                                </h2>
                             </div>
                         </div>
                     ))}
@@ -158,8 +193,8 @@ const Gallery = () => {
                                                     key={idx}
                                                     onClick={() => setCurrentImageIndex(idx)}
                                                     className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex
-                                                            ? 'bg-white w-8'
-                                                            : 'bg-white/50 hover:bg-white/70'
+                                                        ? 'bg-white w-8'
+                                                        : 'bg-white/50 hover:bg-white/70'
                                                         }`}
                                                 />
                                             ))}

@@ -5,7 +5,7 @@ const VideoHero = () => {
 
     useEffect(() => {
         if (videoRef.current) {
-            videoRef.current.playbackRate = 0.6;
+            videoRef.current.playbackRate = 1.0; // Velocidad normal para mayor fluidez
         }
     }, []);
 
@@ -18,7 +18,9 @@ const VideoHero = () => {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                preload="auto"
+                className="absolute inset-0 w-full h-full object-cover will-change-transform"
+                style={{ transform: 'translateZ(0)' }}
             >
                 <source src="/Videos/video-1.mp4" type="video/mp4" />
                 Tu navegador no soporta el video.

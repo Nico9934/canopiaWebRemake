@@ -1,5 +1,6 @@
 import './App.css'
 import HeaderNav from './components/HeaderNav'
+import WhatsAppButton from './components/WhatsAppButton'
 import About from './pages/About'
 import PrincipalHero from './pages/PrincipalHero'
 import Services from './pages/Services'
@@ -17,6 +18,8 @@ function App() {
     <>
 
       <HeaderNav />
+      <WhatsAppButton />
+
       <PrincipalHero></PrincipalHero>
       <VideoHero></VideoHero>
 

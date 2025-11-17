@@ -36,17 +36,27 @@ const HeaderNav = () => {
                 </li>
                 <li>
                     <a href="#services" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
-                        Servicios
+                        Nuestros Servicios
                     </a>
                 </li>
                 <li>
                     <a href="#gallery" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
-                        Galería
+                        Nuestros proyectos
                     </a>
                 </li>
                 <li>
                     <a href="#contacto" className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block">
                         Contacto
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://canopia2.mitiendanube.com/productos/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-negro transition-all duration-300 hover:scale-110 inline-block"
+                    >
+                        Tienda Online
                     </a>
                 </li>
             </ul>
@@ -69,17 +79,28 @@ const HeaderNav = () => {
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
                         <a href="#services" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
-                            Servicios
+                            Nuestros Servicios
                         </a>
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
                         <a href="#gallery" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
-                            Galería
+                            Nuestros proyectos
                         </a>
                     </li>
                     <li className="transform transition-all duration-300 hover:translate-x-2">
                         <a href="#contacto" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-grisClaro">
                             Contacto
+                        </a>
+                    </li>
+                    <li className="transform transition-all duration-300 hover:translate-x-2">
+                        <a
+                            href="https://canopia2.mitiendanube.com/productos/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block py-2 hover:text-grisClaro"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Tienda Online
                         </a>
                     </li>
                 </ul>

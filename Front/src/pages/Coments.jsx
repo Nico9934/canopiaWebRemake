@@ -93,16 +93,16 @@ const Coments = () => {
                     {infiniteTestimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-80 md:w-96 bg-white/60 backdrop-blur-sm p-8 border-l-4 border-verdeOpaco hover:border-violeta transition-all duration-500 hover:shadow-xl group"
+                            className="shrink-0 w-80 md:w-96 p-8 rounded-lg bg-white shadow-xl hover:shadow-2xl transition-all duration-500 group cursor-pointer"
                         >
-                            <div className="flex items-start gap-4 mb-4">
+                            <div className="flex items-center gap-4 mb-6">
                                 <img
                                     src={testimonial.image}
                                     alt={testimonial.name}
-                                    className="w-16 h-16 rounded-full object-cover ring-2 ring-gray-200 group-hover:ring-verdeOpaco transition-all duration-300"
+                                    className="w-16 h-16 rounded-full object-cover transition-all duration-500 group-hover:scale-110"
                                 />
-                                <div className="flex-1">
-                                    <h3 className="text-lg font-semibold text-gray-800 mb-1">
+                                <div className="flex-1 text-left">
+                                    <h3 className="text-xl font-semibold text-verdeOpaco mb-1">
                                         {testimonial.name}
                                     </h3>
                                     <div className="flex gap-1">
@@ -120,7 +120,7 @@ const Coments = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-gray-600 text-sm leading-relaxed italic">
+                            <p className="text-gray-600 text-base leading-relaxed">
                                 "{testimonial.comment}"
                             </p>
                         </div>
