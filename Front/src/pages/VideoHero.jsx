@@ -37,14 +37,11 @@ const VideoHero = () => {
                     </h2>
                     <div className="w-24 h-1 bg-verdeOliva mx-auto mb-8"></div>
                     <p className="text-lg md:text-2xl leading-relaxed mb-8 animate-fade-in-delay">
-                        Somos una empresa comprometida con la excelencia y la innovación.
-                        Nuestro equipo está conformado por profesionales apasionados que trabajan
-                        cada día para ofrecer soluciones eficientes, sostenibles y adaptadas
-                        a las necesidades de nuestros clientes.
+                        En Canopia abordamos el paisajismo como un proceso consciente, donde el diseño, la naturaleza y el uso cotidiano del espacio dialogan entre sí.
+                        <br /><br />Nuestro trabajo se basa en la observación, la planificación y el acompañamiento, buscando crear paisajes que se integren de manera natural y perdurable en el tiempo.
+
                     </p>
-                    <p className="text-base md:text-xl text-gray-200 animate-fade-in-delay-2">
-                        Creemos en el valor del compromiso, la integridad y la mejora continua.
-                    </p>
+
                 </div>
             </div>
 

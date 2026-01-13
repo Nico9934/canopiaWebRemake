@@ -18,10 +18,10 @@ const PrincipalHero = () => {
                 {/* Texto */}
                 <div className="flex flex-col justify-center items-start md:-mr-44 m-auto w-full p-6 md:w-2/5 z-20">
                     <h1 className="text-5xl text-blanco md:text-verdeOpaco text-start md:text-7xl font-bold mb-4 animate-fade-in">
-                        Bienvenido a Canopia
+                        Bienvenido a <label htmlFor=""> CANOPIA</label>
                     </h1>
                     <p className="text-lg text-blanco md:text-verdeOpaco md:text-xl text-start max-w-2xl mb-6 animate-fade-in-delay">
-                        Transformamos espacios en armonía con la naturaleza, creando jardines sostenibles y elegantes.
+                        Un lugar donde diseñamos y cuidamos espacios verdes desde la escucha, el proceso y el vínculo con la naturaleza.
                     </p>
                     <a
                         href="#contacto"

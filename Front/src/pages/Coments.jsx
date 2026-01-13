@@ -13,19 +13,24 @@ const Coments = () => {
 
     const testimonials = [
         {
-            name: "María González",
-            comment: "¡Canopia transformó mi jardín en un verdadero paraíso! Estoy feliz con el resultado.",
+            name: "Fabian",
+            comment: "Es una empresa muy recomendable seria y responsable",
             image: "https://randomuser.me/api/portraits/women/1.jpg",
         },
         {
-            name: "Javier Pérez",
-            comment: "El equipo fue muy profesional y respetuoso con los tiempos. ¡Muy recomendable!",
+            name: "Elsa",
+            comment: "Se ve mucho trabajo desde el día 1. Gente muy responsable y con compromiso por su trabajo",
             image: "https://randomuser.me/api/portraits/men/2.jpg",
         },
         {
-            name: "Luciana Díaz",
-            comment: "No puedo creer el cambio que lograron. ¡Ahora disfruto mucho más de mi espacio exterior!",
+            name: "Gustavo",
+            comment: "Conocí a Eri por recomendación, y encontré más que una profesional, encontré a una excelente persona, que entendió lo que quería y trabajó para lograrlo",
             image: "https://randomuser.me/api/portraits/women/3.jpg",
+        },
+        {
+            name: "Mariana",
+            comment: "Conocí el trabajo de Canopia a través de mi obra y el resultado fue hermoso. El césped quedó impecable y el jardín cambió por completo",
+            image: "https://randomuser.me/api/portraits/men/4.jpg",
         },
     ];
 
@@ -80,7 +85,7 @@ const Coments = () => {
         <section className="bg-gray-50 min-h-screen py-20 px-6 overflow-hidden flex items-center">
             <div className="max-w-7xl mx-auto w-full">
                 {/* Testimonios */}
-                <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-verdeOpaco">
+                <h2 className="text-3xl md:text-4xl font-bold uppercase mb-16 text-center text-verdeOpaco">
                     Lo que dicen nuestros clientes
                 </h2>
 
@@ -96,11 +101,11 @@ const Coments = () => {
                             className="shrink-0 w-80 md:w-96 p-8 rounded-lg bg-white shadow-xl hover:shadow-2xl transition-all duration-500 group cursor-pointer"
                         >
                             <div className="flex items-center gap-4 mb-6">
-                                <img
+                                {/* <img
                                     src={testimonial.image}
                                     alt={testimonial.name}
                                     className="w-16 h-16 rounded-full object-cover transition-all duration-500 group-hover:scale-110"
-                                />
+                                /> */}
                                 <div className="flex-1 text-left">
                                     <h3 className="text-xl font-semibold text-verdeOpaco mb-1">
                                         {testimonial.name}

@@ -12,18 +12,18 @@ const servicios = [
         icono: "/iconos-svg/GuantesIcon.svg",
     },
     {
-        nombre: "Riego por aspersión",
+        nombre: "Riego automatizado",
         descripcion: "Sistemas de riego eficientes.",
         icono: "/iconos-svg/RegaderaIcon.svg",
     },
     {
         nombre: "Poda especializada",
-        descripcion: "Corte seguro y profesional.",
+        descripcion: "Métodos acordes a cada necesidad",
         icono: "/iconos-svg/TijeraIcon.svg",
     },
     {
-        nombre: "Limpieza de obra",
-        descripcion: "Dejamos todo impecable.",
+        nombre: "Sanidad vegetal",
+        descripcion: "Aplicación de productos para la salud vegetal.",
         icono: "/iconos-svg/PalaIcon.svg",
     },
     {
@@ -37,8 +37,8 @@ const servicios = [
         icono: "/iconos-svg/TabletIcon.svg",
     },
     {
-        nombre: "Césped y panes",
-        descripcion: "Siembra y colocación rápida.",
+        nombre: "Venta y colocación de cesped ",
+        descripcion: "Grama bahiana de 1era calidad.",
         icono: "/iconos-svg/RamoIcon.svg",
     },
     {

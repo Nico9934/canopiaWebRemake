@@ -59,7 +59,7 @@ const BackAfter = () => {
     return (
         <section className="bg-blanco min-h-screen py-16 px-6 flex items-center">
             <div className="max-w-6xl mx-auto text-center w-full">
-                <h2 className="text-4xl font-bold mb-12 text-negro">Antes y Después</h2>
+                <h2 className="text-4xl font-bold mb-12 uppercase text-negro">Antes y Después</h2>
 
                 {/* Galería */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

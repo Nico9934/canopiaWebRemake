@@ -30,7 +30,7 @@ function App() {
 
       <Gallery></Gallery>
       <Contact></Contact>
-      <UserForm></UserForm>
+      {/* <UserForm></UserForm> */}
       <Footer></Footer>
 
 
