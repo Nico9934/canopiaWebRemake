@@ -1,8 +1,6 @@
-import { CarouselDefault } from '../components/CarouselDefault'
-
 const About = () => {
     return (
-        <div id="about" className="bg-blanco min-h-screen flex items-center">
+        <section id="about" className="bg-blanco min-h-screen flex items-center">
             <div className="w-full h-screen flex flex-col md:flex-row">
 
                 {/* Imagen a la izquierda - Solo Desktop */}
@@ -56,7 +54,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

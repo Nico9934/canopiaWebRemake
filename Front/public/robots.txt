@@ -1,0 +1,13 @@
+# Robots.txt para Canopia
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.git
+
+# Sitemap
+Sitemap: https://canopia-opal.vercel.app/sitemap.xml
+
+# Crawler directives
+Crawl-delay: 1
+Request-rate: 1/1s

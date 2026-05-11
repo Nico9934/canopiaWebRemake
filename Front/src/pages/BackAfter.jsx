@@ -74,7 +74,8 @@ const BackAfter = () => {
                             {/* Imagen Antes */}
                             <img
                                 src={img.before}
-                                alt="Antes"
+                                alt="Antes de la transformación"
+                                loading="lazy"
                                 className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${activeStates[index] || false
                                     ? 'opacity-0 scale-110'
                                     : 'opacity-100 scale-100'
@@ -84,7 +85,8 @@ const BackAfter = () => {
                             {/* Imagen Después */}
                             <img
                                 src={img.after}
-                                alt="Después"
+                                alt="Después de la transformación"
+                                loading="lazy"
                                 className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${activeStates[index] || false
                                     ? 'opacity-100 scale-100'
                                     : 'opacity-0 scale-95'

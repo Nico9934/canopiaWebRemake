@@ -147,7 +147,9 @@ const Services = () => {
                                 <div className="flex justify-center mb-6">
                                     <img
                                         src={servicio.icono}
-                                        alt={servicio.nombre}
+                                        alt=""
+                                        aria-hidden="true"
+                                        loading="lazy"
                                         className="w-20 h-20 transition-all duration-500 hover:scale-110"
                                     />
                                 </div>
@@ -191,7 +193,9 @@ const Services = () => {
                             <div className="flex justify-center mb-4">
                                 <img
                                     src={servicio.icono}
-                                    alt={servicio.nombre}
+                                    alt=""
+                                    aria-hidden="true"
+                                    loading="lazy"
                                     className="w-16 h-16 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
                                 />
                             </div>

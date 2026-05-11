@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Gallery = () => {
@@ -114,6 +114,17 @@ const Gallery = () => {
         }
     };
 
+    // Cerrar modal con ESC
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && selectedProject) {
+                closeModal();
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [selectedProject]);
+
     const swipeConfidenceThreshold = 10000;
     const swipePower = (offset, velocity) => {
         return Math.abs(offset) * velocity;
@@ -127,32 +138,33 @@ const Gallery = () => {
                 {/* Grid masonry style - imágenes a pantalla completa */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
                     {projects.map((project, index) => {
-                        // Calcular si es uno de los últimos elementos y cuántos son
                         const totalItems = projects.length;
                         const remainder = totalItems % 4;
                         const isLastRow = index >= totalItems - remainder && remainder !== 0;
-                        
-                        // Determinar span según cuántos elementos quedan (solo ancho, no altura)
+
                         let spanClass = '';
                         if (isLastRow && remainder === 1) {
-                            spanClass = 'lg:col-span-4'; // 1 elemento ocupa todo el ancho
+                            spanClass = 'lg:col-span-4';
                         } else if (isLastRow && remainder === 2) {
-                            spanClass = 'lg:col-span-2'; // 2 elementos ocupan 2 columnas cada uno
+                            spanClass = 'lg:col-span-2';
                         } else if (isLastRow && remainder === 3) {
-                            spanClass = index === totalItems - 3 ? 'lg:col-span-2' : 'lg:col-span-1'; // Primero 2 columnas, otros 1
+                            spanClass = index === totalItems - 3 ? 'lg:col-span-2' : 'lg:col-span-1';
                         }
-                        
+
                         return (
-                            <div
+                            <button
                                 key={index}
                                 onClick={() => openModal(project)}
                                 className={`relative aspect-square overflow-hidden group cursor-pointer ${spanClass}`}
+                                aria-label={`Abrir galería de ${project.title} ${project.subtitle}`}
+                                type="button"
                             >
                             {/* Imagen de fondo */}
                             <img
                                 src={project.imageUrl}
                                 alt={`${project.title} - ${project.subtitle}`}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
                             />
 
                             {/* Overlay con color que aparece en hover */}
@@ -166,15 +178,15 @@ const Gallery = () => {
                             </div>
 
                             {/* Título y subtítulo que aparecen en hover */}
-                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0" aria-hidden="true">
                                 <h3 className="text-xs font-light uppercase tracking-wide">
                                     {project.title}
                                 </h3>
-                                <h2 className="text-lg font-bold">
+                                <p className="text-lg font-bold">
                                     {project.subtitle}
-                                </h2>
+                                </p>
                             </div>
-                        </div>
+                        </button>
                     );
                     })}
                 </div>
@@ -184,6 +196,9 @@ const Gallery = () => {
                     <div
                         className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in"
                         onClick={closeModal}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label={`Galería de ${selectedProject.subtitle}`}
                     >
                         <div
                             className="relative max-w-5xl w-full"
@@ -193,6 +208,8 @@ const Gallery = () => {
                             <button
                                 onClick={closeModal}
                                 className="absolute -top-12 right-0 text-white hover:text-grisClaro transition-colors duration-300 text-4xl font-light z-10"
+                                aria-label="Cerrar galería (Esc)"
+                                type="button"
                             >
                                 ×
                             </button>
@@ -256,12 +273,16 @@ const Gallery = () => {
                                         <button
                                             onClick={() => paginate(-1)}
                                             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10"
+                                            aria-label="Imagen anterior"
+                                            type="button"
                                         >
                                             ‹
                                         </button>
                                         <button
                                             onClick={() => paginate(1)}
                                             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10"
+                                            aria-label="Imagen siguiente"
+                                            type="button"
                                         >
                                             ›
                                         </button>

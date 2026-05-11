@@ -1,6 +1,7 @@
 import './App.css'
 import HeaderNav from './components/HeaderNav'
 import WhatsAppButton from './components/WhatsAppButton'
+import SEOHead from './components/SEOHead'
 import About from './pages/About'
 import PrincipalHero from './pages/PrincipalHero'
 import Services from './pages/Services'
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <>
-
+      <SEOHead />
       <HeaderNav />
       <WhatsAppButton />
 
