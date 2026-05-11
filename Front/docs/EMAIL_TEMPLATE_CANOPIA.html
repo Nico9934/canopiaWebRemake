@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222420;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header con gradiente */
+        .header {
+            background: linear-gradient(135deg, #8AA361 0%, #ADC92E 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Icono de contenedor */
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 32px;
+        }
+
+        /* Contenido principal */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: #8AA361;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Tarjetas de información */
+        .info-card {
+            background-color: #f9f9f9;
+            border-left: 4px solid #8AA361;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background-color: #f5f5f5;
+            box-shadow: 0 2px 4px rgba(138, 163, 97, 0.1);
+        }
+
+        .info-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #8AA361;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-value {
+            font-size: 15px;
+            color: #222420;
+            word-break: break-word;
+        }
+
+        /* Sección de mensaje */
+        .message-section {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .message-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #8AA361;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .message-content {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.8;
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #BE77DD;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8AA361 0%, #ADC92E 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(138, 163, 97, 0.3);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 30px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222420;
+            color: #E9D1BE;
+            padding: 30px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #8AA361;
+            margin-bottom: 12px;
+        }
+
+        .footer-text {
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #8AA361;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ADC92E;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background-color: #8AA361;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 0;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+            }
+
+            .container {
+                background-color: #2d2d2d;
+                color: #f0f0f0;
+            }
+
+            .info-card {
+                background-color: #3d3d3d;
+            }
+
+            .message-section {
+                background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+            }
+
+            .footer {
+                background-color: #1a1a1a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="icon-circle">📧</div>
+            <h1>Nuevo Contacto</h1>
+            <p>Recibiste un nuevo mensaje desde tu sitio web</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Badge -->
+            <div style="text-align: center;">
+                <span class="badge">✨ Mensaje de Contacto</span>
+            </div>
+
+            <!-- Greeting -->
+            <p class="greeting">Hola Nico 👋</p>
+
+            <!-- Intro Text -->
+            <p class="intro-text">
+                Alguien está interesado en tus servicios de paisajismo y diseño de espacios verdes. Lee el mensaje a continuación y responde lo antes posible.
+            </p>
+
+            <!-- Información de Contacto -->
+            <div class="info-card">
+                <div class="info-label">👤 Nombre</div>
+                <div class="info-value">{{from_name}}</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">📧 Email</div>
+                <div class="info-value">
+                    <a href="mailto:{{from_email}}" style="color: #8AA361; text-decoration: none;">{{from_email}}</a>
+                </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="message-section">
+                <div class="message-label">💬 Mensaje</div>
+                <div class="message-content">{{message}}</div>
+            </div>
+
+            <!-- CTA Button -->
+            <div style="text-align: center;">
+                <a href="mailto:{{from_email}}" class="cta-button">Responder Ahora</a>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Info adicional -->
+            <p style="font-size: 13px; color: #666; text-align: center; margin-top: 20px;">
+                💡 <strong>Tip:</strong> Responde rápidamente para mejorar la experiencia del cliente y aumentar tus posibilidades de cerrar un proyecto.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">🌿 CANOPIA</div>
+            <div class="footer-text">Arquitectura Sustentable</div>
+            <div class="footer-text">Diseño y Cuidado de Espacios Verdes</div>
+
+            <div class="footer-links">
+                <a href="https://canopia-opal.vercel.app">Sitio Web</a>
+                <a href="https://www.instagram.com/canopia.ok/">Instagram</a>
+                <a href="https://canopia2.mitiendanube.com/productos/">Tienda</a>
+            </div>
+
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #444;">
+                <p class="footer-text">
+                    Este email fue generado automáticamente desde tu formulario de contacto.
+                </p>
+                <p class="footer-text" style="font-size: 11px;">
+                    © {{year}} CANOPIA. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
